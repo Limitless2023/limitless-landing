@@ -44,8 +44,8 @@ export function Features({ locale }: { locale: Locale }) {
           {t.features.items.map((item, i) => {
             const Icon = ICONS[i];
             const accent = ACCENTS[i];
-            /* 前两张卡片在大屏占 2 列 */
-            const span = i < 2 ? "lg:col-span-2" : "";
+            /* 首尾各两张卡片在大屏占 2 列，保持网格平衡 */
+            const span = i < 2 || i >= 6 ? "lg:col-span-2" : "";
             return (
               <div
                 key={i}

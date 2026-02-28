@@ -199,6 +199,9 @@
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
+.animate-float-slow {
+  animation: float 8s ease-in-out infinite;
+}
 .animate-marquee {
   animation: marquee 30s linear infinite;
 }
@@ -265,6 +268,22 @@
     0 0 80px rgba(120,224,200,0.05),
     inset 0 1px 0 rgba(255,255,255,0.08);
   transform: translateY(-1px);
+}
+
+/* ================================================================ */
+/*  Device showcase frames                                           */
+/* ================================================================ */
+.showcase-desktop-frame {
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 0 100px rgba(120, 224, 200, 0.03);
+}
+.showcase-iphone-frame {
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 0 60px rgba(120, 224, 200, 0.05);
 }
 
 /* ================================================================ */
