@@ -245,3 +245,32 @@
     0 0 8px var(--accent-teal),
     0 0 24px var(--accent-teal-dim);
 }
+
+/* ================================================================ */
+/*  CTA button glow                                                  */
+/* ================================================================ */
+.cta-glow {
+  background: linear-gradient(135deg, rgba(120,224,200,0.15), rgba(144,200,240,0.1));
+  border: 1px solid rgba(120,224,200,0.2);
+  box-shadow:
+    0 0 20px rgba(120,224,200,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+  backdrop-filter: blur(8px);
+}
+.cta-glow:hover {
+  background: linear-gradient(135deg, rgba(120,224,200,0.22), rgba(144,200,240,0.15));
+  border-color: rgba(120,224,200,0.35);
+  box-shadow:
+    0 0 40px rgba(120,224,200,0.15),
+    0 0 80px rgba(120,224,200,0.05),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+  transform: translateY(-1px);
+}
+
+/* ================================================================ */
+/*  Section divider gradient line                                    */
+/* ================================================================ */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(120,224,200,0.12), rgba(144,200,240,0.08), transparent);
+}

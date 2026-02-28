@@ -49,7 +49,7 @@ export function Features({ locale }: { locale: Locale }) {
             return (
               <div
                 key={i}
-                className={`glass-card group rounded-2xl p-6 sm:p-8 ${span} transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+                className={`glass-card group relative overflow-hidden rounded-2xl p-6 sm:p-8 ${span} transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
                 style={{ transitionDelay: `${i * 80 + 200}ms` }}
               >
                 {/* 图标 */}
