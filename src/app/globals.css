@@ -83,37 +83,24 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: oklch(0.08 0 0);
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
+  --card: oklch(0.12 0 0);
   --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
+  --popover: oklch(0.12 0 0);
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
+  --primary-foreground: oklch(0.08 0 0);
+  --secondary: oklch(0.16 0 0);
   --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
+  --muted: oklch(0.16 0 0);
+  --muted-foreground: oklch(0.55 0 0);
+  --accent: oklch(0.16 0 0);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 10%);
   --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
 }
 
 @layer base {
@@ -128,18 +115,133 @@
   }
 }
 
-/* ---- scroll-triggered fade-in ---- */
+/* ================================================================ */
+/*  Brand accent colors                                              */
+/* ================================================================ */
+:root {
+  --accent-teal: #78e0c8;
+  --accent-blue: #90c8f0;
+  --accent-rose: #f0b0b8;
+  --accent-teal-dim: rgba(120, 224, 200, 0.15);
+  --accent-blue-dim: rgba(144, 200, 240, 0.12);
+}
+
+/* ================================================================ */
+/*  Noise texture overlay                                            */
+/* ================================================================ */
+.noise-overlay::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* ================================================================ */
+/*  Animations                                                       */
+/* ================================================================ */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50%      { opacity: 0.7; transform: scale(1.08); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out both;
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out both;
+}
+.animate-scale-in {
+  animation: scaleIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.animate-orbit {
+  animation: orbit 40s linear infinite;
+}
+.animate-orbit-reverse {
+  animation: orbit 55s linear infinite reverse;
+}
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* ================================================================ */
+/*  Glass card                                                       */
+/* ================================================================ */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 0 0 1px rgba(120, 224, 200, 0.08),
+    0 8px 40px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+/* ================================================================ */
+/*  Gradient text                                                    */
+/* ================================================================ */
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #78e0c8 45%, #90c8f0 70%, #f0b0b8 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ================================================================ */
+/*  Glow dot                                                         */
+/* ================================================================ */
+.glow-dot {
+  box-shadow:
+    0 0 8px var(--accent-teal),
+    0 0 24px var(--accent-teal-dim);
 }
