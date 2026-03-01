@@ -9,7 +9,6 @@ import { Features } from "@/components/sections/features";
 import { Timeline } from "@/components/sections/timeline";
 import { TechStack } from "@/components/sections/tech-stack";
 import { Highlights } from "@/components/sections/highlights";
-import { FAQ } from "@/components/sections/faq";
 import { Footer } from "@/components/sections/footer";
 import { NeuralSparkLogo } from "@/components/neural-spark-logo";
 
@@ -34,9 +33,6 @@ export default function Home() {
           </a>
           <a href="#timeline" className="hidden rounded-full px-4 py-1.5 text-xs text-white/35 transition-colors hover:text-white/70 sm:block">
             {locale === "en" ? "Timeline" : "时间线"}
-          </a>
-          <a href="#faq" className="hidden rounded-full px-4 py-1.5 text-xs text-white/35 transition-colors hover:text-white/70 sm:block">
-            {locale === "en" ? "FAQ" : "问答"}
           </a>
           <div className="mx-2 hidden h-4 w-[1px] bg-white/[0.06] sm:block" />
 
@@ -71,10 +67,6 @@ export default function Home() {
       <div className="section-divider mx-auto max-w-4xl" />
 
       <Highlights locale={locale} />
-
-      <div className="section-divider mx-auto max-w-4xl" />
-
-      <FAQ locale={locale} />
 
       <Footer locale={locale} />
     </main>
