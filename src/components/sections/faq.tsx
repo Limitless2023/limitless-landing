@@ -16,11 +16,11 @@ export function FAQ({ locale }: { locale: Locale }) {
 
   return (
     <section id="faq" className="relative px-6 py-32" ref={ref}>
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_100%,rgba(144,200,240,0.03),transparent)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_100%,rgba(232,224,216,0.03),transparent)]" />
 
       <div className="mx-auto max-w-2xl">
         <div className={`mb-16 text-center transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-          <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-[var(--accent-rose)]">
+          <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-[var(--accent-frost-mid)]">
             {locale === "en" ? "Questions" : "问答"}
           </p>
           <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">

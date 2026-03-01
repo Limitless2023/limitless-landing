@@ -23,6 +23,7 @@ export interface LogoPalette {
 
 export const LOGO_PALETTES: LogoPalette[] = [
   { id: "white",    name: "Pure White",   c: "#ffffff", n: "#b0b0b0", g: "rgba(255,255,255,0.10)", l: "rgba(200,200,200,0.18)", lc: "#333", ln: "#888", lg: "rgba(50,50,50,0.06)", ll: "rgba(100,100,100,0.18)" },
+  { id: "frost",    name: "Frost White",  c: "#e8e0d8", n: "#c8beb6", g: "rgba(232,224,216,0.10)", l: "rgba(200,190,182,0.20)", lc: "#4a4440", ln: "#6e6660", lg: "rgba(74,68,64,0.06)", ll: "rgba(110,102,96,0.20)" },
   { id: "neutral",  name: "Warm Neutral", c: "#e8e0d4", n: "#c4b8a8", g: "rgba(228,220,210,0.10)", l: "rgba(196,184,168,0.20)", lc: "#8b7e6e", ln: "#a89980", lg: "rgba(139,126,110,0.06)", ll: "rgba(168,153,127,0.20)" },
   { id: "silver",   name: "Cool Silver",  c: "#d0d4e4", n: "#a0a8c0", g: "rgba(208,212,228,0.10)", l: "rgba(160,168,192,0.20)", lc: "#6b7394", ln: "#8891b0", lg: "rgba(107,115,148,0.06)", ll: "rgba(136,145,176,0.20)" },
   { id: "teal",     name: "Mint Teal",    c: "#78e0c8", n: "#50c4a8", g: "rgba(120,224,200,0.08)", l: "rgba(80,196,168,0.18)", lc: "#2a9e80", ln: "#40b898", lg: "rgba(42,158,128,0.06)", ll: "rgba(64,184,152,0.18)" },

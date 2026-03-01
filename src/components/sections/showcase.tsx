@@ -20,7 +20,7 @@ export function Showcase({ locale }: { locale: Locale }) {
   return (
     <section className="relative px-6 pb-24 pt-12 sm:pb-32 sm:pt-20" ref={ref}>
       {/* 背景辉光 */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_40%,rgba(120,224,200,0.04),transparent)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_40%,rgba(232,224,216,0.04),transparent)]" />
 
       <div
         className={`mx-auto max-w-5xl transition-all duration-1000 ${

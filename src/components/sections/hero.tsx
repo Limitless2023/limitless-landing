@@ -53,7 +53,7 @@ function AmbientParticles() {
         if (p.y > h) p.y = 0;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(120, 224, 200, ${p.alpha})`;
+        ctx.fillStyle = `rgba(232, 224, 216, ${p.alpha})`;
         ctx.fill();
       }
       raf = requestAnimationFrame(draw);
@@ -92,7 +92,7 @@ export function Hero({ locale }: { locale: Locale }) {
     <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-16 text-center">
       {/* ---- 多层背景 ---- */}
       {/* Animated gradient mesh */}
-      <div className="pointer-events-none absolute inset-0 animate-gradient bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(120,224,200,0.12),transparent_50%),radial-gradient(ellipse_60%_40%_at_80%_50%,rgba(144,200,240,0.06),transparent_50%),radial-gradient(ellipse_50%_50%_at_20%_60%,rgba(200,184,232,0.05),transparent_50%)]" />
+      <div className="pointer-events-none absolute inset-0 animate-gradient bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(232,224,216,0.12),transparent_50%),radial-gradient(ellipse_60%_40%_at_80%_50%,rgba(200,190,182,0.06),transparent_50%),radial-gradient(ellipse_50%_50%_at_20%_60%,rgba(176,166,158,0.05),transparent_50%)]" />
       {/* 网格 */}
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:72px_72px]" />
       {/* 底部渐隐 */}
@@ -103,22 +103,22 @@ export function Hero({ locale }: { locale: Locale }) {
       {/* ---- Logo + 轨道环 ---- */}
       <div className="relative mb-10 animate-scale-in" style={{ animationDelay: "0.1s" }}>
         {/* 大面积辉光 */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(120,224,200,0.07),transparent_55%)] animate-pulse-glow" />
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(232,224,216,0.07),transparent_55%)] animate-pulse-glow" />
         {/* 轨道环 */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[300px] w-[300px] rounded-full border border-white/[0.03] animate-orbit">
-          <div className="absolute -top-[3px] left-1/2 -translate-x-1/2 h-1.5 w-1.5 rounded-full bg-[var(--accent-teal)] glow-dot" />
+          <div className="absolute -top-[3px] left-1/2 -translate-x-1/2 h-1.5 w-1.5 rounded-full bg-[var(--accent-frost)] glow-dot" />
         </div>
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[380px] w-[380px] rounded-full border border-white/[0.02] animate-orbit-reverse">
-          <div className="absolute top-1/2 -right-[3px] -translate-y-1/2 h-1 w-1 rounded-full bg-[var(--accent-blue)] opacity-70" />
+          <div className="absolute top-1/2 -right-[3px] -translate-y-1/2 h-1 w-1 rounded-full bg-[var(--accent-frost-mid)] opacity-70" />
         </div>
 
-        <NeuralSparkLogo size={200} animated paletteId="teal" />
+        <NeuralSparkLogo size={200} animated paletteId="frost" />
       </div>
 
       {/* ---- 标语 pill ---- */}
       <div className="animate-fade-in-up mb-6" style={{ animationDelay: "0.2s" }}>
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/[0.06] bg-white/[0.03] px-4 py-1.5 text-xs font-medium text-[var(--accent-teal)] backdrop-blur-sm">
-          <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent-teal)] animate-pulse" />
+        <span className="inline-flex items-center gap-2 rounded-full border border-white/[0.06] bg-white/[0.03] px-4 py-1.5 text-xs font-medium text-[var(--accent-frost)] backdrop-blur-sm">
+          <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent-frost)] animate-pulse" />
           {locale === "en" ? "Web · Mac · iPhone — One codebase, three platforms" : "Web · Mac · iPhone — 一套代码，三端运行"}
         </span>
       </div>

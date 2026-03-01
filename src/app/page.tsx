@@ -19,7 +19,7 @@ export default function Home() {
       {/* ---- 顶部导航栏 ---- */}
       <nav className="fixed inset-x-0 top-0 z-50 flex items-center justify-between border-b border-white/[0.04] bg-background/70 px-6 py-3 backdrop-blur-2xl">
         <div className="flex items-center gap-3">
-          <NeuralSparkLogo size={26} animated paletteId="teal" />
+          <NeuralSparkLogo size={26} animated paletteId="frost" />
           <span className="text-sm font-semibold tracking-tight text-white/80">Limitless Agent</span>
         </div>
 

@@ -11,12 +11,12 @@ export function Footer({ locale }: { locale: Locale }) {
   return (
     <footer className="relative px-6 pb-12 pt-32">
       {/* 顶部渐变分隔线 */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-[var(--accent-teal)]/20 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-[var(--accent-frost)]/20 to-transparent" />
 
       <div className="mx-auto flex max-w-4xl flex-col items-center gap-12 text-center">
         {/* Logo */}
         <div className="animate-float">
-          <NeuralSparkLogo size={64} animated paletteId="teal" />
+          <NeuralSparkLogo size={64} animated paletteId="frost" />
         </div>
 
         {/* CTA */}
@@ -28,7 +28,7 @@ export function Footer({ locale }: { locale: Locale }) {
             href="https://limitless-agents.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.05] px-8 py-4 text-base font-medium text-white backdrop-blur-sm transition-all hover:border-[var(--accent-teal)]/30 hover:bg-white/[0.08] hover:shadow-[0_0_40px_rgba(120,224,200,0.12)]"
+            className="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.05] px-8 py-4 text-base font-medium text-white backdrop-blur-sm transition-all hover:border-[var(--accent-frost)]/30 hover:bg-white/[0.08] hover:shadow-[0_0_40px_rgba(232,224,216,0.12)]"
           >
             {t.footer.cta}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

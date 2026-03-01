@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@import "./design-tokens.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -83,24 +84,24 @@
 }
 
 .dark {
-  --background: oklch(0.08 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.12 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.12 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.08 0 0);
-  --secondary: oklch(0.16 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.16 0 0);
-  --muted-foreground: oklch(0.55 0 0);
-  --accent: oklch(0.16 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 8%);
-  --input: oklch(1 0 0 / 10%);
-  --ring: oklch(0.556 0 0);
+  --background: #070708;
+  --foreground: #e8e0d8;
+  --card: #131315;
+  --card-foreground: #e8e0d8;
+  --popover: #131315;
+  --popover-foreground: #e8e0d8;
+  --primary: #e8e0d8;
+  --primary-foreground: #070708;
+  --secondary: #1a1a1d;
+  --secondary-foreground: #e8e0d8;
+  --muted: #1a1a1d;
+  --muted-foreground: #948a82;
+  --accent: #1a1a1d;
+  --accent-foreground: #e8e0d8;
+  --destructive: #c8908a;
+  --border: rgba(232,224,216, 0.08);
+  --input: rgba(232,224,216, 0.10);
+  --ring: #948a82;
 }
 
 @layer base {
@@ -116,14 +117,19 @@
 }
 
 /* ================================================================ */
-/*  Brand accent colors                                              */
+/*  Brand accent colors (Frost White)                                */
 /* ================================================================ */
 :root {
-  --accent-teal: #78e0c8;
-  --accent-blue: #90c8f0;
-  --accent-rose: #f0b0b8;
-  --accent-teal-dim: rgba(120, 224, 200, 0.15);
-  --accent-blue-dim: rgba(144, 200, 240, 0.12);
+  --accent-frost: #e8e0d8;
+  --accent-frost-mid: #c8beb6;
+  --accent-frost-dim: rgba(232, 224, 216, 0.15);
+  --accent-frost-subtle: rgba(232, 224, 216, 0.06);
+  /* Legacy aliases for gradual migration */
+  --accent-teal: #e8e0d8;
+  --accent-blue: #c8beb6;
+  --accent-rose: #b0a69e;
+  --accent-teal-dim: rgba(232, 224, 216, 0.15);
+  --accent-blue-dim: rgba(232, 224, 216, 0.10);
 }
 
 /* ================================================================ */
@@ -224,7 +230,7 @@
   background: rgba(255, 255, 255, 0.06);
   border-color: rgba(255, 255, 255, 0.12);
   box-shadow:
-    0 0 0 1px rgba(120, 224, 200, 0.08),
+    0 0 0 1px rgba(232, 224, 216, 0.08),
     0 8px 40px rgba(0, 0, 0, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
   transform: translateY(-2px);
@@ -234,7 +240,7 @@
 /*  Gradient text                                                    */
 /* ================================================================ */
 .gradient-text {
-  background: linear-gradient(135deg, #ffffff 0%, #78e0c8 45%, #90c8f0 70%, #f0b0b8 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #e8e0d8 45%, #c8beb6 70%, #b0a69e 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -245,27 +251,27 @@
 /* ================================================================ */
 .glow-dot {
   box-shadow:
-    0 0 8px var(--accent-teal),
-    0 0 24px var(--accent-teal-dim);
+    0 0 8px var(--accent-frost),
+    0 0 24px var(--accent-frost-dim);
 }
 
 /* ================================================================ */
 /*  CTA button glow                                                  */
 /* ================================================================ */
 .cta-glow {
-  background: linear-gradient(135deg, rgba(120,224,200,0.15), rgba(144,200,240,0.1));
-  border: 1px solid rgba(120,224,200,0.2);
+  background: linear-gradient(135deg, rgba(232,224,216,0.12), rgba(200,190,182,0.08));
+  border: 1px solid rgba(232,224,216,0.2);
   box-shadow:
-    0 0 20px rgba(120,224,200,0.08),
+    0 0 20px rgba(232,224,216,0.08),
     inset 0 1px 0 rgba(255,255,255,0.05);
   backdrop-filter: blur(8px);
 }
 .cta-glow:hover {
-  background: linear-gradient(135deg, rgba(120,224,200,0.22), rgba(144,200,240,0.15));
-  border-color: rgba(120,224,200,0.35);
+  background: linear-gradient(135deg, rgba(232,224,216,0.18), rgba(200,190,182,0.12));
+  border-color: rgba(232,224,216,0.35);
   box-shadow:
-    0 0 40px rgba(120,224,200,0.15),
-    0 0 80px rgba(120,224,200,0.05),
+    0 0 40px rgba(232,224,216,0.15),
+    0 0 80px rgba(232,224,216,0.05),
     inset 0 1px 0 rgba(255,255,255,0.08);
   transform: translateY(-1px);
 }
@@ -277,13 +283,13 @@
   box-shadow:
     0 25px 80px rgba(0, 0, 0, 0.5),
     0 0 0 1px rgba(255, 255, 255, 0.06),
-    0 0 100px rgba(120, 224, 200, 0.03);
+    0 0 100px rgba(232, 224, 216, 0.03);
 }
 .showcase-iphone-frame {
   box-shadow:
     0 30px 80px rgba(0, 0, 0, 0.5),
     0 0 0 1px rgba(255, 255, 255, 0.06),
-    0 0 60px rgba(120, 224, 200, 0.05);
+    0 0 60px rgba(232, 224, 216, 0.05);
 }
 
 /* ================================================================ */
@@ -291,5 +297,5 @@
 /* ================================================================ */
 .section-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(120,224,200,0.12), rgba(144,200,240,0.08), transparent);
+  background: linear-gradient(90deg, transparent, rgba(232,224,216,0.12), rgba(200,190,182,0.08), transparent);
 }

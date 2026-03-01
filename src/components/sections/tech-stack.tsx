@@ -29,7 +29,7 @@ export function TechStack({ locale }: { locale: Locale }) {
   return (
     <section id="tech" className="relative overflow-hidden py-32" ref={ref}>
       <div className={`mb-16 text-center transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-        <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-[var(--accent-blue)]">
+        <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-[var(--accent-frost-mid)]">
           {locale === "en" ? "Stack" : "技术"}
         </p>
         <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">

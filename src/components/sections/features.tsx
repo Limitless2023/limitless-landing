@@ -10,14 +10,14 @@ import { useInView } from "@/hooks/use-intersection";
 
 const ICONS = [Monitor, Shuffle, Brain, Wrench, Mic, LayoutGrid, Code, Zap];
 const ACCENTS = [
-  "rgba(120,224,200,0.6)",  // teal
-  "rgba(144,200,240,0.6)",  // blue
-  "rgba(200,184,232,0.5)",  // lavender
-  "rgba(240,200,160,0.6)",  // peach
-  "rgba(240,176,184,0.5)",  // rose
-  "rgba(120,224,200,0.6)",  // teal
-  "rgba(144,200,240,0.6)",  // blue
-  "rgba(240,176,184,0.5)",  // rose
+  "rgba(232,224,216,0.6)",  // frost
+  "rgba(124,170,200,0.5)",  // stone blue
+  "rgba(128,180,148,0.5)",  // sage
+  "rgba(196,160,96,0.5)",   // amber
+  "rgba(200,144,138,0.5)",  // dust rose
+  "rgba(232,224,216,0.6)",  // frost
+  "rgba(124,170,200,0.5)",  // stone blue
+  "rgba(200,144,138,0.5)",  // dust rose
 ];
 
 export function Features({ locale }: { locale: Locale }) {
@@ -27,11 +27,11 @@ export function Features({ locale }: { locale: Locale }) {
   return (
     <section id="features" className="relative px-6 py-32" ref={ref}>
       {/* 背景渐变 */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_40%_at_50%_0%,rgba(120,224,200,0.03),transparent)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_40%_at_50%_0%,rgba(232,224,216,0.03),transparent)]" />
 
       <div className="mx-auto max-w-6xl">
         <div className={`mb-20 text-center transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-          <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-[var(--accent-teal)]">
+          <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-[var(--accent-frost)]">
             {locale === "en" ? "Capabilities" : "能力"}
           </p>
           <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">

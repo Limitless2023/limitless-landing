@@ -1,0 +1,535 @@
+/**
+ * ============================================================
+ *  Limitless Agent — Design Tokens v2.0
+ *  Brand: Frost White #e8e0d8
+ *  Generated: 2026-03-01
+ * ============================================================
+ *
+ *  三层 Token 架构:
+ *    1. Primitive  — 原始色阶、尺寸数值
+ *    2. Semantic   — 语义映射（surface, text, border, status）
+ *    3. Component  — 组件级别（button, card, input）
+ *
+ *  品牌理念:
+ *    Frost White 不是传统意义的 "accent color"。
+ *    它是光本身 — 在深色 UI 中，品牌通过温暖的明度层级呈现，
+ *    而非通过饱和的色相。极简、克制、通透。
+ *
+ *  使用方式:
+ *    @import './design-tokens.css';
+ */
+
+/* ================================================================ */
+/*  1. PRIMITIVE TOKENS                                              */
+/* ================================================================ */
+
+:root {
+
+  /* ---- Frost (Brand Primary) ----
+   *  温暖的灰白色阶，微弱玫瑰调。
+   *  frost-800 (#e8e0d8) 是品牌主色。
+   */
+  --frost-50:   #14120f;
+  --frost-100:  #1e1c18;
+  --frost-200:  #2e2a24;
+  --frost-300:  #4a4440;
+  --frost-400:  #6e6660;
+  --frost-500:  #948a82;
+  --frost-600:  #b0a69e;
+  --frost-700:  #c8beb6;
+  --frost-800:  #e8e0d8;  /* ← Brand Primary */
+  --frost-900:  #f2ece6;
+  --frost-950:  #faf6f2;
+
+  /* ---- Neutral (Cool Gray) ----
+   *  结构性灰色，比 Frost 偏冷，用于 UI 骨架。
+   */
+  --neutral-0:    #000000;
+  --neutral-50:   #0a0a0c;
+  --neutral-100:  #111114;
+  --neutral-150:  #161619;
+  --neutral-200:  #1c1c20;
+  --neutral-250:  #232328;
+  --neutral-300:  #2c2c32;
+  --neutral-400:  #3e3e47;
+  --neutral-500:  #56565f;
+  --neutral-600:  #74747e;
+  --neutral-700:  #9494a0;
+  --neutral-800:  #b8b8c4;
+  --neutral-900:  #dcdce4;
+  --neutral-950:  #eeeef4;
+  --neutral-1000: #ffffff;
+
+  /* ---- Sage (Success / Positive) ----
+   *  低饱和的灰绿，与 Frost 协调。
+   */
+  --sage-50:  #0c1410;
+  --sage-100: #14201a;
+  --sage-200: #1e3428;
+  --sage-300: #2e4e3c;
+  --sage-400: #447056;
+  --sage-500: #609474;
+  --sage-600: #80b494;
+  --sage-700: #a4ccb4;
+  --sage-800: #c8e0d2;
+  --sage-900: #e4f0ea;
+  --sage-950: #f2f8f4;
+
+  /* ---- Dust Rose (Error / Negative) ----
+   *  低饱和的灰粉，柔和的警示色。
+   */
+  --rose-50:  #16100e;
+  --rose-100: #281a18;
+  --rose-200: #402828;
+  --rose-300: #603c3a;
+  --rose-400: #885450;
+  --rose-500: #aa706c;
+  --rose-600: #c8908a;
+  --rose-700: #deb0aa;
+  --rose-800: #eeccc8;
+  --rose-900: #f6e4e2;
+  --rose-950: #fcf2f0;
+
+  /* ---- Stone Blue (Info / Neutral Accent) ----
+   *  低饱和的灰蓝，冷静的信息色。
+   */
+  --blue-50:  #0c1014;
+  --blue-100: #141c24;
+  --blue-200: #1e303e;
+  --blue-300: #2c4860;
+  --blue-400: #406888;
+  --blue-500: #5c8aaa;
+  --blue-600: #7caac8;
+  --blue-700: #a0c4dc;
+  --blue-800: #c4dcea;
+  --blue-900: #e2eef4;
+  --blue-950: #f0f6fa;
+
+  /* ---- Amber (Warning) ----
+   *  低饱和的暖黄棕，注意色。
+   */
+  --amber-50:  #141008;
+  --amber-100: #241c10;
+  --amber-200: #3c3018;
+  --amber-300: #5c4824;
+  --amber-400: #806434;
+  --amber-500: #a48448;
+  --amber-600: #c4a060;
+  --amber-700: #dcbc84;
+  --amber-800: #ead4aa;
+  --amber-900: #f4eacc;
+  --amber-950: #faf4e6;
+
+
+  /* ================================================================ */
+  /*  2. SEMANTIC TOKENS                                               */
+  /* ================================================================ */
+
+  /* ---- Surfaces ---- */
+  --surface-0:   #070708;     /* App background */
+  --surface-1:   #0d0d0f;     /* Sidebar, panels */
+  --surface-2:   #131315;     /* Card background */
+  --surface-3:   #1a1a1d;     /* Elevated card, dropdown */
+  --surface-4:   #222225;     /* Hover state surface */
+  --surface-overlay: rgba(0,0,0,0.6);
+
+  /* ---- Text ----
+   *  用 Frost 色调替代纯白，使文字带有品牌温度。
+   */
+  --text-primary:    #e8e0d8;         /* frost-800 */
+  --text-secondary:  rgba(232,224,216, 0.60);
+  --text-tertiary:   rgba(232,224,216, 0.38);
+  --text-disabled:   rgba(232,224,216, 0.20);
+  --text-inverse:    #070708;
+
+  /* ---- Border ---- */
+  --border-subtle:   rgba(232,224,216, 0.04);
+  --border-default:  rgba(232,224,216, 0.08);
+  --border-hover:    rgba(232,224,216, 0.15);
+  --border-active:   rgba(232,224,216, 0.30);
+  --border-focus:    rgba(232,224,216, 0.40);
+
+  /* ---- Interactive (Brand) ---- */
+  --accent:          #e8e0d8;
+  --accent-hover:    #f2ece6;
+  --accent-active:   #c8beb6;
+  --accent-muted:    rgba(232,224,216, 0.15);
+  --accent-subtle:   rgba(232,224,216, 0.06);
+
+  /* ---- Status ---- */
+  --success:         #80b494;
+  --success-bg:      rgba(128,180,148, 0.10);
+  --success-border:  rgba(128,180,148, 0.20);
+
+  --warning:         #c4a060;
+  --warning-bg:      rgba(196,160,96, 0.10);
+  --warning-border:  rgba(196,160,96, 0.20);
+
+  --error:           #c8908a;
+  --error-bg:        rgba(200,144,138, 0.10);
+  --error-border:    rgba(200,144,138, 0.20);
+
+  --info:            #7caac8;
+  --info-bg:         rgba(124,170,200, 0.10);
+  --info-border:     rgba(124,170,200, 0.20);
+
+  /* ---- Glow / Shadow ---- */
+  --glow-frost:      rgba(232,224,216, 0.10);
+  --glow-frost-lg:   rgba(232,224,216, 0.04);
+  --glow-frost-sm:   rgba(232,224,216, 0.20);
+  --shadow-sm:       0 1px 2px rgba(0,0,0,0.4);
+  --shadow-md:       0 4px 16px rgba(0,0,0,0.5);
+  --shadow-lg:       0 8px 40px rgba(0,0,0,0.6);
+  --shadow-glow:     0 0 20px var(--glow-frost), 0 0 60px var(--glow-frost-lg);
+
+  /* ---- Spacing (4px grid) ---- */
+  --space-0:   0;
+  --space-px:  1px;
+  --space-0.5: 0.125rem;  /* 2px */
+  --space-1:   0.25rem;   /* 4px */
+  --space-1.5: 0.375rem;  /* 6px */
+  --space-2:   0.5rem;    /* 8px */
+  --space-3:   0.75rem;   /* 12px */
+  --space-4:   1rem;      /* 16px */
+  --space-5:   1.25rem;   /* 20px */
+  --space-6:   1.5rem;    /* 24px */
+  --space-8:   2rem;      /* 32px */
+  --space-10:  2.5rem;    /* 40px */
+  --space-12:  3rem;      /* 48px */
+  --space-16:  4rem;      /* 64px */
+  --space-20:  5rem;      /* 80px */
+  --space-24:  6rem;      /* 96px */
+  --space-32:  8rem;      /* 128px */
+
+  /* ---- Radius ---- */
+  --radius-sm:    0.375rem;  /* 6px */
+  --radius-md:    0.5rem;    /* 8px */
+  --radius-lg:    0.75rem;   /* 12px */
+  --radius-xl:    1rem;      /* 16px */
+  --radius-2xl:   1.25rem;   /* 20px */
+  --radius-3xl:   1.5rem;    /* 24px */
+  --radius-full:  9999px;
+
+  /* ---- Typography ---- */
+  --font-sans:  'Geist Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono:  'Geist Mono', 'SF Mono', Consolas, 'Liberation Mono', monospace;
+
+  --text-xs:    0.75rem;     /* 12px */
+  --text-sm:    0.8125rem;   /* 13px */
+  --text-base:  0.875rem;    /* 14px */
+  --text-md:    1rem;        /* 16px */
+  --text-lg:    1.125rem;    /* 18px */
+  --text-xl:    1.25rem;     /* 20px */
+  --text-2xl:   1.5rem;      /* 24px */
+  --text-3xl:   2rem;        /* 32px */
+  --text-4xl:   2.5rem;      /* 40px */
+  --text-5xl:   3.5rem;      /* 56px */
+
+  --leading-tight:   1.15;
+  --leading-snug:    1.3;
+  --leading-normal:  1.6;
+  --leading-relaxed: 1.8;
+
+  --tracking-tighter: -0.04em;
+  --tracking-tight:   -0.02em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.04em;
+  --tracking-wider:   0.08em;
+
+  /* ---- Motion ---- */
+  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:   cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring:   cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-bounce:   cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  --duration-fast:    100ms;
+  --duration-normal:  200ms;
+  --duration-slow:    350ms;
+  --duration-slower:  600ms;
+
+  /* ---- Z-Index ---- */
+  --z-base:     0;
+  --z-dropdown: 50;
+  --z-sticky:   100;
+  --z-overlay:  200;
+  --z-modal:    300;
+  --z-toast:    400;
+  --z-tooltip:  500;
+
+
+  /* ================================================================ */
+  /*  3. COMPONENT TOKENS                                              */
+  /* ================================================================ */
+
+  /* ---- Button ---- */
+  --btn-primary-bg:       var(--frost-800);
+  --btn-primary-text:     var(--surface-0);
+  --btn-primary-hover-bg: var(--frost-900);
+  --btn-primary-active-bg:var(--frost-700);
+
+  --btn-secondary-bg:     var(--surface-3);
+  --btn-secondary-text:   var(--text-primary);
+  --btn-secondary-border: var(--border-default);
+  --btn-secondary-hover:  var(--surface-4);
+
+  --btn-ghost-text:       var(--text-secondary);
+  --btn-ghost-hover-bg:   var(--accent-subtle);
+  --btn-ghost-hover-text: var(--text-primary);
+
+  --btn-height-sm:  2rem;      /* 32px */
+  --btn-height-md:  2.25rem;   /* 36px */
+  --btn-height-lg:  2.75rem;   /* 44px */
+  --btn-height-xl:  3rem;      /* 48px */
+
+  /* ---- Input ---- */
+  --input-bg:          var(--surface-2);
+  --input-border:      var(--border-default);
+  --input-text:        var(--text-primary);
+  --input-placeholder: var(--text-tertiary);
+  --input-focus-border:var(--border-focus);
+  --input-focus-ring:  0 0 0 3px var(--accent-subtle);
+  --input-height:      var(--btn-height-md);
+
+  /* ---- Card ---- */
+  --card-bg:           var(--surface-2);
+  --card-border:       var(--border-default);
+  --card-hover-border: var(--border-hover);
+  --card-radius:       var(--radius-xl);
+  --card-padding:      var(--space-6);
+
+  /* ---- Badge ---- */
+  --badge-default-bg:    var(--accent-subtle);
+  --badge-default-text:  var(--text-secondary);
+  --badge-success-bg:    var(--success-bg);
+  --badge-success-text:  var(--success);
+  --badge-warning-bg:    var(--warning-bg);
+  --badge-warning-text:  var(--warning);
+  --badge-error-bg:      var(--error-bg);
+  --badge-error-text:    var(--error);
+  --badge-info-bg:       var(--info-bg);
+  --badge-info-text:     var(--info);
+
+  /* ---- Nav ---- */
+  --nav-bg:         rgba(7,7,8, 0.85);
+  --nav-backdrop:   blur(16px);
+  --nav-border:     var(--border-subtle);
+  --nav-item-text:  var(--text-tertiary);
+  --nav-item-hover: var(--text-primary);
+  --nav-item-active:var(--accent);
+
+  /* ---- Tooltip ---- */
+  --tooltip-bg:     var(--frost-800);
+  --tooltip-text:   var(--surface-0);
+  --tooltip-radius: var(--radius-md);
+
+  /* ---- Chat Bubble ---- */
+  --chat-user-bg:   var(--frost-100);
+  --chat-user-text: var(--text-primary);
+  --chat-ai-bg:     var(--surface-3);
+  --chat-ai-text:   var(--text-primary);
+}
+
+
+/* ================================================================ */
+/*  LIGHT MODE                                                       */
+/* ================================================================ */
+/*
+ *  切换方式（任选其一）:
+ *    1. <html class="light">   — 手动切换
+ *    2. @media prefers-color-scheme — 跟随系统
+ *
+ *  原则:
+ *    - Primitive tokens 不变（两个模式共用色阶）
+ *    - Semantic tokens 翻转映射方向
+ *    - Component tokens 引用 semantic，自动跟随
+ *    - 品牌色从 frost-800（浅）→ frost-200/300（深）
+ *    - 功能色从 *-600 → *-500（更深以确保对比度）
+ */
+
+.light,
+[data-theme="light"] {
+
+  /* ---- Surfaces ---- */
+  --surface-0:   #faf6f2;     /* frost-950: 最浅暖白 */
+  --surface-1:   #f2ece6;     /* frost-900: 面板/侧边栏 */
+  --surface-2:   #ffffff;     /* 纯白卡片 */
+  --surface-3:   #f2ece6;     /* frost-900: 浮层/下拉 */
+  --surface-4:   #e8e0d8;     /* frost-800: hover 态 */
+  --surface-overlay: rgba(0,0,0,0.3);
+
+  /* ---- Text ----
+   *  浅色模式用 Frost 深色端，保持品牌温度。
+   *  不用纯黑 #000，用 frost-50/100 带棕调的深色。
+   */
+  --text-primary:    #1e1c18;         /* frost-100 */
+  --text-secondary:  rgba(30,28,24, 0.65);
+  --text-tertiary:   rgba(30,28,24, 0.42);
+  --text-disabled:   rgba(30,28,24, 0.22);
+  --text-inverse:    #faf6f2;
+
+  /* ---- Border ---- */
+  --border-subtle:   rgba(30,28,24, 0.04);
+  --border-default:  rgba(30,28,24, 0.10);
+  --border-hover:    rgba(30,28,24, 0.18);
+  --border-active:   rgba(30,28,24, 0.35);
+  --border-focus:    rgba(30,28,24, 0.45);
+
+  /* ---- Interactive (Brand) ----
+   *  浅色背景上，accent 用深色端的 frost 保证对比度。
+   */
+  --accent:          #2e2a24;         /* frost-200 */
+  --accent-hover:    #1e1c18;         /* frost-100 */
+  --accent-active:   #4a4440;         /* frost-300 */
+  --accent-muted:    rgba(30,28,24, 0.10);
+  --accent-subtle:   rgba(30,28,24, 0.04);
+
+  /* ---- Status ----
+   *  用 *-500 (更深) 保证在浅背景上的对比度。
+   *  背景色也调整为更柔和的版本。
+   */
+  --success:         #447056;         /* sage-400 */
+  --success-bg:      rgba(68,112,86, 0.08);
+  --success-border:  rgba(68,112,86, 0.18);
+
+  --warning:         #806434;         /* amber-400 */
+  --warning-bg:      rgba(128,100,52, 0.08);
+  --warning-border:  rgba(128,100,52, 0.18);
+
+  --error:           #885450;         /* rose-400 */
+  --error-bg:        rgba(136,84,80, 0.08);
+  --error-border:    rgba(136,84,80, 0.18);
+
+  --info:            #406888;         /* blue-400 */
+  --info-bg:         rgba(64,104,136, 0.08);
+  --info-border:     rgba(64,104,136, 0.18);
+
+  /* ---- Glow / Shadow ---- */
+  --glow-frost:      rgba(30,28,24, 0.04);
+  --glow-frost-lg:   rgba(30,28,24, 0.02);
+  --glow-frost-sm:   rgba(30,28,24, 0.08);
+  --shadow-sm:       0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md:       0 4px 16px rgba(0,0,0,0.08);
+  --shadow-lg:       0 8px 40px rgba(0,0,0,0.12);
+  --shadow-glow:     0 0 20px var(--glow-frost), 0 0 60px var(--glow-frost-lg);
+
+  /* ---- Component Overrides ---- */
+
+  /* Button */
+  --btn-primary-bg:       var(--frost-200);   /* 深色按钮在浅背景 */
+  --btn-primary-text:     var(--frost-950);
+  --btn-primary-hover-bg: var(--frost-100);
+  --btn-primary-active-bg:var(--frost-300);
+
+  --btn-secondary-bg:     #ffffff;
+  --btn-secondary-text:   var(--text-primary);
+  --btn-secondary-border: var(--border-default);
+  --btn-secondary-hover:  var(--surface-1);
+
+  --btn-ghost-text:       var(--text-secondary);
+  --btn-ghost-hover-bg:   var(--accent-subtle);
+  --btn-ghost-hover-text: var(--text-primary);
+
+  /* Input */
+  --input-bg:          #ffffff;
+  --input-border:      var(--border-default);
+  --input-text:        var(--text-primary);
+  --input-placeholder: var(--text-tertiary);
+  --input-focus-border:var(--border-focus);
+  --input-focus-ring:  0 0 0 3px var(--accent-subtle);
+
+  /* Card */
+  --card-bg:           #ffffff;
+  --card-border:       var(--border-default);
+  --card-hover-border: var(--border-hover);
+
+  /* Badge */
+  --badge-default-bg:    var(--accent-subtle);
+  --badge-default-text:  var(--text-secondary);
+  --badge-success-bg:    var(--success-bg);
+  --badge-success-text:  var(--success);
+  --badge-warning-bg:    var(--warning-bg);
+  --badge-warning-text:  var(--warning);
+  --badge-error-bg:      var(--error-bg);
+  --badge-error-text:    var(--error);
+  --badge-info-bg:       var(--info-bg);
+  --badge-info-text:     var(--info);
+
+  /* Nav */
+  --nav-bg:         rgba(250,246,242, 0.88);
+  --nav-backdrop:   blur(16px);
+  --nav-border:     var(--border-subtle);
+  --nav-item-text:  var(--text-tertiary);
+  --nav-item-hover: var(--text-primary);
+  --nav-item-active:var(--accent);
+
+  /* Tooltip — 反转 */
+  --tooltip-bg:     var(--frost-100);
+  --tooltip-text:   var(--frost-950);
+
+  /* Chat Bubble */
+  --chat-user-bg:   var(--frost-900);
+  --chat-user-text: var(--text-primary);
+  --chat-ai-bg:     #ffffff;
+  --chat-ai-text:   var(--text-primary);
+}
+
+/* ---- 跟随系统偏好（可选） ---- */
+@media (prefers-color-scheme: light) {
+  :root:not(.dark):not([data-theme="dark"]) {
+    /* 复制 .light 的所有值 */
+    --surface-0:   #faf6f2;
+    --surface-1:   #f2ece6;
+    --surface-2:   #ffffff;
+    --surface-3:   #f2ece6;
+    --surface-4:   #e8e0d8;
+    --surface-overlay: rgba(0,0,0,0.3);
+    --text-primary:    #1e1c18;
+    --text-secondary:  rgba(30,28,24, 0.65);
+    --text-tertiary:   rgba(30,28,24, 0.42);
+    --text-disabled:   rgba(30,28,24, 0.22);
+    --text-inverse:    #faf6f2;
+    --border-subtle:   rgba(30,28,24, 0.04);
+    --border-default:  rgba(30,28,24, 0.10);
+    --border-hover:    rgba(30,28,24, 0.18);
+    --border-active:   rgba(30,28,24, 0.35);
+    --border-focus:    rgba(30,28,24, 0.45);
+    --accent:          #2e2a24;
+    --accent-hover:    #1e1c18;
+    --accent-active:   #4a4440;
+    --accent-muted:    rgba(30,28,24, 0.10);
+    --accent-subtle:   rgba(30,28,24, 0.04);
+    --success:         #447056;
+    --success-bg:      rgba(68,112,86, 0.08);
+    --success-border:  rgba(68,112,86, 0.18);
+    --warning:         #806434;
+    --warning-bg:      rgba(128,100,52, 0.08);
+    --warning-border:  rgba(128,100,52, 0.18);
+    --error:           #885450;
+    --error-bg:        rgba(136,84,80, 0.08);
+    --error-border:    rgba(136,84,80, 0.18);
+    --info:            #406888;
+    --info-bg:         rgba(64,104,136, 0.08);
+    --info-border:     rgba(64,104,136, 0.18);
+    --glow-frost:      rgba(30,28,24, 0.04);
+    --glow-frost-lg:   rgba(30,28,24, 0.02);
+    --glow-frost-sm:   rgba(30,28,24, 0.08);
+    --shadow-sm:       0 1px 2px rgba(0,0,0,0.06);
+    --shadow-md:       0 4px 16px rgba(0,0,0,0.08);
+    --shadow-lg:       0 8px 40px rgba(0,0,0,0.12);
+    --shadow-glow:     0 0 20px var(--glow-frost), 0 0 60px var(--glow-frost-lg);
+    --btn-primary-bg:       #2e2a24;
+    --btn-primary-text:     #faf6f2;
+    --btn-primary-hover-bg: #1e1c18;
+    --btn-primary-active-bg:#4a4440;
+    --btn-secondary-bg:     #ffffff;
+    --btn-secondary-text:   #1e1c18;
+    --btn-secondary-border: rgba(30,28,24, 0.10);
+    --btn-secondary-hover:  #f2ece6;
+    --input-bg:          #ffffff;
+    --card-bg:           #ffffff;
+    --nav-bg:         rgba(250,246,242, 0.88);
+    --tooltip-bg:     #1e1c18;
+    --tooltip-text:   #faf6f2;
+    --chat-user-bg:   #f2ece6;
+    --chat-ai-bg:     #ffffff;
+  }
+}
