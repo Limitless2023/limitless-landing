@@ -5,7 +5,7 @@ const en = {
     tagline: "Open Source AI Agent",
     title: "From Zero to Production\nin 48 Hours",
     subtitle:
-      "One person + AI — from create-next-app to a full-stack Agent platform with 7 models, 10 tools, and 3 deployment targets.",
+      "Pure vibe coding — one person orchestrating AI to ship a full-stack Agent platform with 7 models, 10 tools, and 3 platforms in a single sprint.",
     cta: "Try It Live",
     ctaSource: "View Source",
     stats: { hours: "Hours", commits: "Commits", features: "Features", platforms: "Platforms" },
@@ -83,7 +83,7 @@ const zh: typeof en = {
     tagline: "开源 AI Agent",
     title: "从零到生产\n48 小时",
     subtitle:
-      "一个人 + AI — 从 create-next-app 到全栈 Agent 平台，7 个模型、10 个工具、3 端部署。",
+      "纯 Vibe Coding — 一个人指挥 AI，一次冲刺交付全栈 Agent 平台：7 个模型、10 个工具、3 端部署。",
     cta: "在线体验",
     ctaSource: "查看源码",
     stats: { hours: "小时", commits: "次提交", features: "个功能", platforms: "端部署" },
