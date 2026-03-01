@@ -22,29 +22,32 @@ export function Footer({ locale }: { locale: Locale }) {
         {/* CTA */}
         <div>
           <h3 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl gradient-text">
-            {locale === "en" ? "Ready to explore?" : "准备好了吗？"}
+            {locale === "en" ? "See the code" : "查看代码"}
           </h3>
           <a
-            href="https://limitless-agents.vercel.app"
+            href="https://github.com/Limitless2023/Agent-with-TTS"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.05] px-8 py-4 text-base font-medium text-white backdrop-blur-sm transition-all hover:border-[var(--accent-frost)]/30 hover:bg-white/[0.08] hover:shadow-[0_0_40px_rgba(232,224,216,0.12)]"
           >
+            <Github className="h-4 w-4" />
             {t.footer.cta}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </a>
         </div>
 
-        {/* Links */}
-        <div className="flex items-center gap-6">
+        {/* Badge + Links */}
+        <div className="flex items-center gap-4">
+          <span className="rounded-full border border-white/[0.06] bg-white/[0.02] px-3 py-1 text-[10px] font-medium uppercase tracking-[0.15em] text-white/25">
+            {t.footer.badge}
+          </span>
           <a
-            href="https://github.com/Limitless2023/Agent-with-TTS"
+            href="https://limitless-agents.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm text-white/30 transition-colors hover:text-white/60"
+            className="text-xs text-white/25 transition-colors hover:text-white/50"
           >
-            <Github className="h-4 w-4" />
-            {t.footer.github}
+            {locale === "en" ? "Try Live Demo" : "在线体验"}
           </a>
         </div>
 

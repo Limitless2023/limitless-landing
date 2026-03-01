@@ -1,14 +1,14 @@
 "use client";
 
 import {
-  Monitor, Shuffle, Brain, Wrench,
-  Mic, LayoutGrid, Code, Zap,
+  Shuffle, Wrench, Brain, Mic,
+  Swords, LayoutGrid, Code, Monitor,
 } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/i18n";
 import { useInView } from "@/hooks/use-intersection";
 
-const ICONS = [Monitor, Shuffle, Brain, Wrench, Mic, LayoutGrid, Code, Zap];
+const ICONS = [Shuffle, Wrench, Brain, Mic, Swords, LayoutGrid, Code, Monitor];
 const ACCENTS = [
   "rgba(232,224,216,0.6)",  // frost
   "rgba(124,170,200,0.5)",  // stone blue
@@ -32,7 +32,7 @@ export function Features({ locale }: { locale: Locale }) {
       <div className="mx-auto max-w-6xl">
         <div className={`mb-20 text-center transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-[var(--accent-frost)]">
-            {locale === "en" ? "Capabilities" : "能力"}
+            {t.features.label}
           </p>
           <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
             {t.features.title}

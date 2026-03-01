@@ -4,9 +4,11 @@ import { useState } from "react";
 import type { Locale } from "@/lib/i18n";
 import { Hero } from "@/components/sections/hero";
 import { Showcase } from "@/components/sections/showcase";
+import { Architecture } from "@/components/sections/architecture";
 import { Features } from "@/components/sections/features";
+import { Timeline } from "@/components/sections/timeline";
 import { TechStack } from "@/components/sections/tech-stack";
-
+import { Highlights } from "@/components/sections/highlights";
 import { FAQ } from "@/components/sections/faq";
 import { Footer } from "@/components/sections/footer";
 import { NeuralSparkLogo } from "@/components/neural-spark-logo";
@@ -24,11 +26,14 @@ export default function Home() {
         </div>
 
         <div className="flex items-center gap-1">
-          <a href="#features" className="hidden rounded-full px-4 py-1.5 text-xs text-white/35 transition-colors hover:text-white/70 sm:block">
-            {locale === "en" ? "Features" : "能力"}
+          <a href="#architecture" className="hidden rounded-full px-4 py-1.5 text-xs text-white/35 transition-colors hover:text-white/70 sm:block">
+            {locale === "en" ? "Architecture" : "架构"}
           </a>
-          <a href="#tech" className="hidden rounded-full px-4 py-1.5 text-xs text-white/35 transition-colors hover:text-white/70 sm:block">
-            {locale === "en" ? "Stack" : "技术栈"}
+          <a href="#features" className="hidden rounded-full px-4 py-1.5 text-xs text-white/35 transition-colors hover:text-white/70 sm:block">
+            {locale === "en" ? "Features" : "功能"}
+          </a>
+          <a href="#timeline" className="hidden rounded-full px-4 py-1.5 text-xs text-white/35 transition-colors hover:text-white/70 sm:block">
+            {locale === "en" ? "Timeline" : "时间线"}
           </a>
           <a href="#faq" className="hidden rounded-full px-4 py-1.5 text-xs text-white/35 transition-colors hover:text-white/70 sm:block">
             {locale === "en" ? "FAQ" : "问答"}
@@ -49,11 +54,23 @@ export default function Home() {
 
       <div className="section-divider mx-auto max-w-4xl" />
 
+      <Architecture locale={locale} />
+
+      <div className="section-divider mx-auto max-w-4xl" />
+
       <Features locale={locale} />
 
       <div className="section-divider mx-auto max-w-4xl" />
 
+      <Timeline locale={locale} />
+
+      <div className="section-divider mx-auto max-w-4xl" />
+
       <TechStack locale={locale} />
+
+      <div className="section-divider mx-auto max-w-4xl" />
+
+      <Highlights locale={locale} />
 
       <div className="section-divider mx-auto max-w-4xl" />
 

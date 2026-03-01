@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { NeuralSparkLogo } from "@/components/neural-spark-logo";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Github } from "lucide-react";
 import type { Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/i18n";
 
@@ -76,80 +76,77 @@ function AmbientParticles() {
 }
 
 /* ================================================================ */
-/*  Feature pills                                                    */
+/*  Stats bar                                                        */
 /* ================================================================ */
-const PILLS_EN = ["Multi-Model", "Memory", "Voice", "Tools", "Arena", "MCP"];
-const PILLS_ZH = ["多模型", "记忆", "语音", "工具", "Arena", "MCP"];
+const STATS = [
+  { value: "48", key: "hours" as const },
+  { value: "33", key: "commits" as const },
+  { value: "37", key: "features" as const },
+  { value: "3", key: "platforms" as const },
+];
 
 /* ================================================================ */
 /*  Hero                                                             */
 /* ================================================================ */
 export function Hero({ locale }: { locale: Locale }) {
   const t = getDictionary(locale);
-  const pills = locale === "en" ? PILLS_EN : PILLS_ZH;
 
   return (
     <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-16 text-center">
-      {/* ---- 多层背景 ---- */}
-      {/* Animated gradient mesh */}
+      {/* ---- backgrounds ---- */}
       <div className="pointer-events-none absolute inset-0 animate-gradient bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(232,224,216,0.12),transparent_50%),radial-gradient(ellipse_60%_40%_at_80%_50%,rgba(200,190,182,0.06),transparent_50%),radial-gradient(ellipse_50%_50%_at_20%_60%,rgba(176,166,158,0.05),transparent_50%)]" />
-      {/* 网格 */}
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:72px_72px]" />
-      {/* 底部渐隐 */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-background to-transparent" />
-      {/* 粒子 */}
       <AmbientParticles />
 
-      {/* ---- Logo + 轨道环 ---- */}
-      <div className="relative mb-10 animate-scale-in" style={{ animationDelay: "0.1s" }}>
-        {/* 大面积辉光 */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(232,224,216,0.07),transparent_55%)] animate-pulse-glow" />
-        {/* 轨道环 */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[300px] w-[300px] rounded-full border border-white/[0.03] animate-orbit">
+      {/* ---- Logo + orbits ---- */}
+      <div className="relative mb-8 animate-scale-in" style={{ animationDelay: "0.1s" }}>
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,rgba(232,224,216,0.07),transparent_55%)] animate-pulse-glow" />
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[240px] w-[240px] rounded-full border border-white/[0.03] animate-orbit">
           <div className="absolute -top-[3px] left-1/2 -translate-x-1/2 h-1.5 w-1.5 rounded-full bg-[var(--accent-frost)] glow-dot" />
         </div>
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[380px] w-[380px] rounded-full border border-white/[0.02] animate-orbit-reverse">
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[310px] w-[310px] rounded-full border border-white/[0.02] animate-orbit-reverse">
           <div className="absolute top-1/2 -right-[3px] -translate-y-1/2 h-1 w-1 rounded-full bg-[var(--accent-frost-mid)] opacity-70" />
         </div>
-
-        <NeuralSparkLogo size={200} animated paletteId="frost" />
+        <NeuralSparkLogo size={160} animated paletteId="frost" />
       </div>
 
-      {/* ---- 标语 pill ---- */}
-      <div className="animate-fade-in-up mb-6" style={{ animationDelay: "0.2s" }}>
+      {/* ---- tagline pill ---- */}
+      <div className="animate-fade-in-up mb-5" style={{ animationDelay: "0.2s" }}>
         <span className="inline-flex items-center gap-2 rounded-full border border-white/[0.06] bg-white/[0.03] px-4 py-1.5 text-xs font-medium text-[var(--accent-frost)] backdrop-blur-sm">
           <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent-frost)] animate-pulse" />
-          {locale === "en" ? "Web · Mac · iPhone — One codebase, three platforms" : "Web · Mac · iPhone — 一套代码，三端运行"}
+          {t.hero.tagline}
         </span>
       </div>
 
-      {/* ---- 主标题 ---- */}
+      {/* ---- title ---- */}
       <h1
-        className="animate-fade-in-up max-w-5xl text-[clamp(3rem,8vw,7rem)] font-extrabold leading-[1.05] tracking-[-0.04em]"
+        className="animate-fade-in-up max-w-5xl text-[clamp(2.5rem,7vw,6rem)] font-extrabold leading-[1.08] tracking-[-0.04em] whitespace-pre-line"
         style={{ animationDelay: "0.35s" }}
       >
         <span className="gradient-text">{t.hero.title}</span>
       </h1>
 
-      {/* ---- 副标题 ---- */}
+      {/* ---- subtitle ---- */}
       <p
-        className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/40 animate-fade-in-up sm:text-xl"
+        className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/40 animate-fade-in-up sm:text-lg"
         style={{ animationDelay: "0.5s" }}
       >
         {t.hero.subtitle}
       </p>
 
-      {/* ---- Feature pills ---- */}
-      <div className="mt-8 flex flex-wrap items-center justify-center gap-2 animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
-        {pills.map((p) => (
-          <span key={p} className="rounded-full border border-white/[0.06] bg-white/[0.02] px-3 py-1 text-xs text-white/30">
-            {p}
-          </span>
+      {/* ---- stats bar ---- */}
+      <div className="mt-8 flex items-center gap-6 sm:gap-10 animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
+        {STATS.map((s) => (
+          <div key={s.key} className="flex flex-col items-center gap-1">
+            <span className="text-2xl font-bold tracking-tight text-white/90 sm:text-3xl">{s.value}</span>
+            <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-white/25">{t.hero.stats[s.key]}</span>
+          </div>
         ))}
       </div>
 
-      {/* ---- CTA ---- */}
-      <div className="mt-12 animate-fade-in-up" style={{ animationDelay: "0.75s" }}>
+      {/* ---- dual CTA ---- */}
+      <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:gap-4 animate-fade-in-up" style={{ animationDelay: "0.75s" }}>
         <a
           href="https://limitless-agents.vercel.app"
           target="_blank"
@@ -159,9 +156,18 @@ export function Hero({ locale }: { locale: Locale }) {
           {t.hero.cta}
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
         </a>
+        <a
+          href="https://github.com/Limitless2023/Agent-with-TTS"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group inline-flex items-center gap-2.5 rounded-full border border-white/[0.08] bg-white/[0.03] px-7 py-4 text-sm font-medium text-white/60 backdrop-blur-sm transition-all hover:border-white/15 hover:text-white/80"
+        >
+          <Github className="h-4 w-4" />
+          {t.hero.ctaSource}
+        </a>
       </div>
 
-      {/* ---- 滚动提示线 ---- */}
+      {/* ---- scroll indicator ---- */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in" style={{ animationDelay: "1.4s" }}>
         <div className="h-10 w-[1px] bg-gradient-to-b from-transparent via-white/15 to-transparent" />
       </div>
